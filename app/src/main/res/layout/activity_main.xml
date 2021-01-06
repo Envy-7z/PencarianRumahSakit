@@ -69,6 +69,7 @@
 
     </androidx.cardview.widget.CardView>
     <GridLayout
+        android:id="@+id/gridPlaces"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rowCount="2"
@@ -85,6 +86,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:id="@+id/cvLokasi"
             app:cardCornerRadius="12dp"
             app:cardElevation="5dp"
             app:cardBackgroundColor="#F0F8FF"
@@ -161,26 +163,26 @@
             android:layout_margin="10dp">
 
             <LinearLayout
+                android:id="@+id/cvInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/medical"
-                    android:layout_marginTop="18dp"/>
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/medical" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Info RS"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/googlesans_bold"
-                    android:textSize="18sp"
+                    android:text="Info RS"
                     android:textColor="@color/gray"
-                    android:layout_marginTop="20dp"/>
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -195,26 +197,26 @@
             android:layout_margin="10dp">
 
             <LinearLayout
+                android:id="@+id/cvPetunjuk"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/idea"
-                    android:layout_marginTop="18dp"/>
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/idea" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Petunjuk"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/googlesans_bold"
-                    android:textSize="18sp"
+                    android:text="Petunjuk"
                     android:textColor="@color/gray"
-                    android:layout_marginTop="20dp"/>
+                    android:textSize="18sp" />
 
             </LinearLayout>
 

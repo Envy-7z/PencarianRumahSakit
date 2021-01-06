@@ -1,12 +1,10 @@
-package com.pmob.parkir
+package com.pmob.pencarianrs.utils
 
-data class ParkirModel (
+data class RsModel (
     var name: String = "",
     var rank: String = "",
     var photo: String = "",
     var overview: String = "",
-    var identity: String = "",
-    var long : String = "",
-    var lat : String = ""
+
 
 )

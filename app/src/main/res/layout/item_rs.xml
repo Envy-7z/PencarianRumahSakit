@@ -44,6 +44,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_item_rank"/>
+            <TextView
+                android:text="Fasilitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_fasitas"/>
 
         </LinearLayout>
 

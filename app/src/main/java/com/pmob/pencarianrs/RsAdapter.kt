@@ -1,4 +1,4 @@
-package com.pmob.parkir
+package com.pmob.pencarianrs
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,11 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.pmob.pencarianrs.utils.RsModel
 
-class ParkirAdapter(val listUniv: ArrayList<ParkirModel>) : RecyclerView.Adapter<ParkirAdapter.ListViewHolder>() {
+class RsAdapter(val listUniv: ArrayList<RsModel>) : RecyclerView.Adapter<RsAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_parkir, viewGroup,false )
+        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_rs, viewGroup,false )
         return ListViewHolder(view)
     }
 
@@ -22,7 +23,7 @@ class ParkirAdapter(val listUniv: ArrayList<ParkirModel>) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, rank, photo, overview, identity,long , lat) = listUniv[position]
+        val (name, rank, photo, overview) = listUniv[position]
 
         Glide.with(holder.itemView.context)
             .load(photo)
@@ -31,26 +32,17 @@ class ParkirAdapter(val listUniv: ArrayList<ParkirModel>) : RecyclerView.Adapter
 
         holder.tvName.text = name
         holder.tvRank.text = rank
+        holder.tvOver.text = overview
 
         val mContext = holder.itemView.context
 
-        holder.itemView.setOnClickListener {
-            val moveDetail = Intent(mContext, DetailActivity::class.java)
-            moveDetail.putExtra(DetailActivity.EXTRA_RANK, rank)
-            moveDetail.putExtra(DetailActivity.EXTRA_NAME, name)
-            moveDetail.putExtra(DetailActivity.EXTRA_PHOTO, photo)
-            moveDetail.putExtra(DetailActivity.EXTRA_IDENTITY, identity)
-            moveDetail.putExtra(DetailActivity.EXTRA_OVERVIEW, overview)
-            moveDetail.putExtra(DetailActivity.EXTRA_LONG,long)
-            moveDetail.putExtra(DetailActivity.EXTRA_LAT,lat)
-            mContext.startActivity(moveDetail)
-        }
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvRank: TextView = itemView.findViewById(R.id.tv_item_rank)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
+        var tvOver : TextView = itemView.findViewById(R.id.tv_fasitas)
     }
 
 }

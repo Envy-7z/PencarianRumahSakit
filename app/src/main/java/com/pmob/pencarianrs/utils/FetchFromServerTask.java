@@ -1,7 +1,8 @@
-package com.vmax.nearby;
+package com.pmob.pencarianrs.utils;
 
 import android.os.AsyncTask;
 import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,7 +72,7 @@ public class FetchFromServerTask extends AsyncTask<String, Void, String> {
         Log.e("Data server json", string);
        user.onFetchCompletion(string,0);
     }
-    static String convertStreamToString(java.io.InputStream is) {
+    static String convertStreamToString(InputStream is) {
         java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";
     }

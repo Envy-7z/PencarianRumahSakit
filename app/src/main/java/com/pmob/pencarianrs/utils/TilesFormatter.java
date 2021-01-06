@@ -1,4 +1,4 @@
-package com.vmax.nearby;
+package com.pmob.pencarianrs.utils;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -10,9 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by welcome on 2/9/2018.
- */
+import com.pmob.pencarianrs.R;
 
 public class TilesFormatter extends BaseAdapter {
 

@@ -5,13 +5,12 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
+import com.pmob.pencarianrs.utils.Constants
+import com.pmob.pencarianrs.utils.TilesFormatter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_maps.*
-import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity() {
     private var txt_profile_name: TextView? = null  
@@ -23,15 +22,33 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         txt_profile_name = findViewById(R.id.txt_profile_name)
         sharedpreferences = getSharedPreferences(
-            LoginActivity.my_shared_preferences, MODE_PRIVATE)
+            LoginActivity.my_shared_preferences, MODE_PRIVATE
+        )
         val editor = sharedpreferences.edit()
 
-        txt_profile_name!!.text  = "Hallo " + sharedpreferences.getString(LoginActivity.TAG_NAME, "Testing")
+        txt_profile_name!!.text  = "Hallo " + sharedpreferences.getString(
+            LoginActivity.TAG_NAME,
+            "Testing"
+        )
 
         supportActionBar?.elevation = 0F
         cvRute.setOnClickListener {
             intent = Intent(this@MainActivity, MapsActivity::class.java)
             finish()
+            startActivity(intent)
+        }
+
+
+
+        cvLokasi.setOnClickListener {
+            val intent = Intent(this@MainActivity, PilihActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        cvInfo.setOnClickListener {
+            val intent = Intent(this@MainActivity, InfoActivity::class.java)
+
             startActivity(intent)
         }
         //   tv_toolbar_title.text = "Pencarian Rumah Sakit"
@@ -42,7 +59,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun logout() {
         sharedpreferences = getSharedPreferences(
-                LoginActivity.my_shared_preferences, MODE_PRIVATE)
+            LoginActivity.my_shared_preferences, MODE_PRIVATE
+        )
         val editor = sharedpreferences.edit()
         editor.putBoolean(LoginActivity.session_status, false)
         editor.putString(LoginActivity.TAG_ID, null)

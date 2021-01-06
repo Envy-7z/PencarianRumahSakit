@@ -1,4 +1,4 @@
-package com.vmax.nearby;
+package com.pmob.pencarianrs.utils;
 
 import android.Manifest;
 import android.content.Context;
@@ -7,7 +7,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+
+import androidx.core.app.ActivityCompat;
 
 public class GetLocation implements LocationListener {
     private static final long MIN_DISTANCE_FOR_UPDATE = 10;

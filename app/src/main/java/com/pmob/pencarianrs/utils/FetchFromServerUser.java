@@ -1,4 +1,4 @@
-package com.vmax.nearby;
+package com.pmob.pencarianrs.utils;
 
 /**
  * Created by welcome on 2/9/2018.
